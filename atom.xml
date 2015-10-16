@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://kyeremalprime.github.io/"/>
-  <updated>2015-10-16T18:18:14.000Z</updated>
+  <updated>2015-10-16T19:15:54.000Z</updated>
   <id>http://kyeremalprime.github.io/</id>
   
   <author>
@@ -13,6 +13,25 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[test]]></title>
+    <link href="http://kyeremalprime.github.io/2015/10/17/test/"/>
+    <id>http://kyeremalprime.github.io/2015/10/17/test/</id>
+    <published>2015-10-16T19:14:06.000Z</published>
+    <updated>2015-10-16T19:15:54.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="more_test">more test</h2><a id="more"></a>
+<h2 id="code_test">code test</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="mathjax_test">mathjax test</h2><p>$C_2 = a \dot b$</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="more_test">more test</h2>]]>
+    
+    </summary>
+    
+      <category term="test" scheme="http://kyeremalprime.github.io/tags/test/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Hello World]]></title>
