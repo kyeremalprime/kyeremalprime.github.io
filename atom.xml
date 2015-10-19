@@ -16,8 +16,8 @@
   
   <entry>
     <title><![CDATA[Codeforces[587A]-duff and Weight Lifting]]></title>
-    <link href="http://zyq.sexy/2015/10/19/codeforces-587A/"/>
-    <id>http://zyq.sexy/2015/10/19/codeforces-587A/</id>
+    <link href="http://zyq.sexy/2015/10/19/codeforces-587a/"/>
+    <id>http://zyq.sexy/2015/10/19/codeforces-587a/</id>
     <published>2015-10-19T07:52:36.000Z</published>
     <updated>2015-10-19T08:37:27.000Z</updated>
     <content type="html"><![CDATA[<p><a href="http://codeforces.com/problemset/problem/587/A" target="_blank" style="color: rgb(91, 165, 230); font-family: &#39;comic sans ms&#39;; text-decoration: none;"><span style="color: rgb(91, 165, 230); font-family: &#39;comic sans ms&#39;;">Problem : http://codeforces.com/problemset/problem/587/A</span></a><br><a id="more"></a></p>
@@ -66,10 +66,10 @@
   
   <entry>
     <title><![CDATA[Codeforces[586B]-Laurenty and Shop]]></title>
-    <link href="http://zyq.sexy/2015/10/19/codeforces-586B/"/>
-    <id>http://zyq.sexy/2015/10/19/codeforces-586B/</id>
+    <link href="http://zyq.sexy/2015/10/19/codeforces-586b/"/>
+    <id>http://zyq.sexy/2015/10/19/codeforces-586b/</id>
     <published>2015-10-19T01:38:07.000Z</published>
-    <updated>2015-10-19T09:39:19.000Z</updated>
+    <updated>2015-10-19T09:41:51.000Z</updated>
     <content type="html"><![CDATA[<p><a href="http://codeforces.com/problemset/problem/586/B" target="_blank" style="color: rgb(91, 165, 230); font-family: &#39;comic sans ms&#39;; text-decoration: none;"><span style="color: rgb(91, 165, 230); font-family: &#39;comic sans ms&#39;;">Problem : http://codeforces.com/problemset/problem/586/B</span></a><br><a id="more"></a></p>
 <h2 id="Description">Description</h2><blockquote>
 <p>A little boy Laurenty has been playing his favourite game Nota for quite a while and is now very hungry. The boy wants to make sausage and cheese sandwiches, but first, he needs to buy a sausage and some cheese.</p>
@@ -85,8 +85,8 @@
 </blockquote>
 <h2 id="Input">Input</h2><blockquote>
 <p>The first line of the input contains integer n (2 ≤ n ≤ 50) — the number of houses in each row.</p>
-<p>Each of the next two lines contains n - 1 space-separated integer — values $a<em>{ij}$ (1 ≤ $a</em>{ij}$ ≤ 100).</p>
-<p>The last line contains n space-separated integers $$b_j$ (1 ≤ $b_j$ ≤ 100).</p>
+<p>Each of the next two lines contains n - 1 space-separated integer — values $$a<em>{ij}$$ (1 ≤ $$a</em>{ij}$$ ≤ 100).</p>
+<p>The last line contains n space-separated integers $$b_j$$ (1 ≤ $$b_j$$ ≤ 100).</p>
 </blockquote>
 <h2 id="Output">Output</h2><blockquote>
 <p>Print a single integer — the least total time Laurenty needs to wait at the crossroads, given that he crosses the avenue only once both on his way to the store and on his way back home.</p>
@@ -129,8 +129,8 @@
   
   <entry>
     <title><![CDATA[Codeforces[586A]-Alena's Schedule]]></title>
-    <link href="http://zyq.sexy/2015/10/17/codeforces-586A/"/>
-    <id>http://zyq.sexy/2015/10/17/codeforces-586A/</id>
+    <link href="http://zyq.sexy/2015/10/17/codeforces-586a/"/>
+    <id>http://zyq.sexy/2015/10/17/codeforces-586a/</id>
     <published>2015-10-17T03:51:57.000Z</published>
     <updated>2015-10-19T08:14:14.000Z</updated>
     <content type="html"><![CDATA[<p><a href="http://codeforces.com/problemset/problem/586/A" target="_blank" style="color: rgb(91, 165, 230); font-family: &#39;comic sans ms&#39;; text-decoration: none;"><span style="color: rgb(91, 165, 230); font-family: &#39;comic sans ms&#39;;">Problem : http://codeforces.com/problemset/problem/586/A</span></a><br><a id="more"></a></p>
