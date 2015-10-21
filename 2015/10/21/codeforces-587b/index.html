@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,next" />
+  <meta name="keywords" content="Codeforces,Codeforces-Round#326-Div1," />
 
 
 
@@ -39,16 +39,17 @@
   <link rel="shorticon icon" type="image/x-icon" href="/images/favicon.jpG?v=0.4.5.1" />
 
 
-<meta name="description">
+<meta name="description" content="Problem : http://codeforces.com/problemset/problem/587/B">
 <meta property="og:type" content="article">
-<meta property="og:title" content="codeforces-587b">
+<meta property="og:title" content="Codeforces[587B]-Duff in Beach">
 <meta property="og:url" content="http://zyq.sexy/2015/10/21/codeforces-587b/index.html">
 <meta property="og:site_name" content="rnyz">
-<meta property="og:description">
-<meta property="og:updated_time" content="2015-10-21T07:52:41.000Z">
+<meta property="og:description" content="Problem : http://codeforces.com/problemset/problem/587/B">
+<meta property="og:image" content="http://zyq.sexy/images/quote/587B_1.png">
+<meta property="og:updated_time" content="2015-10-21T08:07:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="codeforces-587b">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Codeforces[587B]-Duff in Beach">
+<meta name="twitter:description" content="Problem : http://codeforces.com/problemset/problem/587/B">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -60,7 +61,7 @@
 
 
 
-  <title> codeforces-587b | rnyz </title>
+  <title> Codeforces[587B]-Duff in Beach | rnyz </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -217,7 +218,7 @@
           
           
             
-              codeforces-587b
+              Codeforces[587B]-Duff in Beach
             
           
         </h1>
@@ -226,11 +227,26 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-10-21T15:52:29+08:00" content="2015-10-21">
+          <time itemprop="dateCreated" datetime="2015-10-21T15:24:55+08:00" content="2015-10-21">
             2015-10-21
           </time>
         </span>
 
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/动态规划/" itemprop="url" rel="index">
+                  <span itemprop="name">动态规划</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
         
 
         
@@ -253,11 +269,53 @@
       
 
       
-        <span itemprop="articleBody"></span>
+        <span itemprop="articleBody"><p><a href="http://codeforces.com/problemset/problem/587/B" target="_blank" style="color: rgb(91, 165, 230); font-family: &#39;comic sans ms&#39;; text-decoration: none;"><span style="color: rgb(91, 165, 230); font-family: &#39;comic sans ms&#39;;">Problem : http://codeforces.com/problemset/problem/587/B</span></a><br><a id="more"></a></p>
+<h2 id="Description">Description</h2><blockquote>
+<p>While Duff was resting in the beach, she accidentally found a strange array <span>$b_0$</span><!-- Has MathJax -->, <span>$b_1$</span><!-- Has MathJax -->, …, <span>$b_l-1$</span><!-- Has MathJax --> consisting of l positive integers. This array was strange because it was extremely long, but there was another (maybe shorter) array, <span>$a_0$</span><!-- Has MathJax -->, …, <span>$a_n-1$</span><!-- Has MathJax --> that b can be build from a with formula: <span>$b_i=a_i mod n$</span><!-- Has MathJax --> where a mod b denoted the remainder of dividing a by b.</p>
+</blockquote>
+<div style="text-align:center;"><br>    <img src="/images/quote/587B_1.png" alt="codeforces587B_1"><br></div>
+
+<blockquote>
+<p>Duff is so curious, she wants to know the number of subsequences of b like <span>$b_i_1$</span><!-- Has MathJax -->, <span>$b_i_2$</span><!-- Has MathJax -->, …, <span>$b_i_x$</span><!-- Has MathJax --> (0 ≤ <span>$i_1$</span><!-- Has MathJax --> &lt; <span>$i_2$</span><!-- Has MathJax --> &lt; … &lt; <span>$i_x$</span><!-- Has MathJax --> &lt; <span>$l$</span><!-- Has MathJax -->), such that:</p>
+<ul>
+<li>1 ≤ x ≤ k</li>
+<li>For each 1 ≤ j ≤ x-1, <span>$\lfloor \frac{i_j}{n} \rfloor + 1 = \lfloor \frac{i_{j+1}}{n} \rfloor$</span><!-- Has MathJax --></li>
+<li>For each 1 ≤ j ≤ x-1, <span>$b_i_j$</span><!-- Has MathJax --> ≤ <span>$b_i_{j+1}$</span><!-- Has MathJax -->. i.e this subsequence is non-decreasing.</li>
+</ul>
+</blockquote>
+<h2 id="Input">Input</h2><blockquote>
+<p>The first line of input contains three integers, n, l and k (1 ≤ n, k, n × k ≤ <span>$10^6$</span><!-- Has MathJax --> and 1 ≤ l ≤ <span>$10^18$</span><!-- Has MathJax -->).</p>
+<p>The second line contains n space separated integers, <span>$a_0$</span><!-- Has MathJax -->, <span>$a_1$</span><!-- Has MathJax -->, …, <span>$a_{n-1}$</span><!-- Has MathJax --> (1 ≤ <span>$a_i$</span><!-- Has MathJax --> ≤ <span>$10^9$</span><!-- Has MathJax --> for each 0 ≤ i ≤ n-1).</p>
+</blockquote>
+<h2 id="Output">Output</h2><blockquote>
+<p>Print the answer modulo <span>$1000000007$</span><!-- Has MathJax --> in one line.</p>
+</blockquote>
+<h2 id="Sample_Input">Sample Input</h2><blockquote>
+<p>3 5 3<br>5 9 1</p>
+</blockquote>
+<h2 id="Sample_Output">Sample Output</h2><blockquote>
+<p>10</p>
+</blockquote>
+<h2 id="Hint">Hint</h2><p>In the first sample case, <span>$b=&lt;5, 9, 1, 5, 9&gt;$</span><!-- Has MathJax -->. So all such sequences are: <span>$&lt;b_0&gt;=&lt;5&gt;, &lt;b_1&gt;=&lt;9&gt;, &lt;b_2&gt;=&lt;1&gt;, &lt;b_3&gt;=&lt;5&gt;, &lt;b_4&gt;=&lt;9&gt;, &lt;b_0, b_3&gt;=&lt;5, 5&gt;, &lt;b_0, b_4&gt;=&lt;5, 9&gt;, &lt;b_1, b_4&gt;=&lt;9, 9&gt;, &lt;b_2, b_3&gt;=&lt;1, 5&gt; and &lt;b_2, b_4&gt;=&lt;1, 9&gt;$</span><!-- Has MathJax -->.</p>
+<h2 id="Trans">Trans</h2><p>给你n,l,k，然后就是告诉你b有l长度，其中是由a不停重复得到的<br>然后问你一共有多少个满足条件的序列存在<br>条件如下：</p>
+<ol>
+<li>这个序列的长度大于等于1，小于等于k</li>
+<li>这个序列在每一个块中只能选择一个数，并且都必须选择在连续的块中</li>
+<li>这个序列是单调不降的</li>
+</ol>
+</span>
       
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Codeforces/" rel="tag">#Codeforces</a>
+          
+            <a href="/tags/Codeforces-Round-326-Div1/" rel="tag">#Codeforces-Round#326-Div1</a>
+          
+        </div>
       
 
       
@@ -317,7 +375,7 @@
           <div class="comments" id="comments">
             
               <div class="ds-thread" data-thread-key="2015/10/21/codeforces-587b/"
-                   data-title="codeforces-587b" data-url="http://zyq.sexy/2015/10/21/codeforces-587b/">
+                   data-title="Codeforces[587B]-Duff in Beach" data-url="http://zyq.sexy/2015/10/21/codeforces-587b/">
               </div>
             
           </div>
@@ -364,14 +422,14 @@
 
           <div class="site-state-item site-state-categories">
             <a href="/categories">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">分类</span>
               </a>
           </div>
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
@@ -443,7 +501,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Input"><span class="nav-number">2.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output"><span class="nav-number">3.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample_Input"><span class="nav-number">4.</span> <span class="nav-text">Sample Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample_Output"><span class="nav-number">5.</span> <span class="nav-text">Sample Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hint"><span class="nav-number">6.</span> <span class="nav-text">Hint</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Trans"><span class="nav-number">7.</span> <span class="nav-text">Trans</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
