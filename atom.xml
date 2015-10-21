@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://zyq.sexy/"/>
-  <updated>2015-10-21T08:16:46.000Z</updated>
+  <updated>2015-10-21T08:18:46.000Z</updated>
   <id>http://zyq.sexy/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://zyq.sexy/2015/10/21/codeforces-587b/"/>
     <id>http://zyq.sexy/2015/10/21/codeforces-587b/</id>
     <published>2015-10-21T07:24:55.000Z</published>
-    <updated>2015-10-21T08:16:46.000Z</updated>
+    <updated>2015-10-21T08:18:46.000Z</updated>
     <content type="html"><![CDATA[<p><a href="http://codeforces.com/problemset/problem/587/B" target="_blank" style="color: rgb(91, 165, 230); font-family: &#39;comic sans ms&#39;; text-decoration: none;"><span style="color: rgb(91, 165, 230); font-family: &#39;comic sans ms&#39;;">Problem : http://codeforces.com/problemset/problem/587/B</span></a><br><a id="more"></a></p>
 <h2 id="Description">Description</h2><blockquote>
 <p>While Duff was resting in the beach, she accidentally found a strange array <span>$b_0$</span><!-- Has MathJax -->, <span>$b_1$</span><!-- Has MathJax -->, …, <span>$b_l-1$</span><!-- Has MathJax --> consisting of l positive integers. This array was strange because it was extremely long, but there was another (maybe shorter) array, <span>$a_0$</span><!-- Has MathJax -->, …, <span>$a_n-1$</span><!-- Has MathJax --> that b can be build from a with formula: <span>$b_i=a_i~mod~n$</span><!-- Has MathJax --> where a mod b denoted the remainder of dividing a by b.</p>
@@ -54,7 +54,7 @@
 <li>这个序列在每一个块中只能选择一个数，并且都必须选择在连续的块中</li>
 <li>这个序列是单调不降的</li>
 </ol>
-<h2 id="Solution">Solution</h2><p>很简单的题- -因*为乘法爆int,WA了一下午.. </p>
+<h2 id="Solution">Solution</h2><p>很简单的题- -因为乘法爆int,WA了一下午.. </p>
 <blockquote>
 <p>条件は一見ややこしいが、言い換えると以下のとおりである。</p>
 <ul>
