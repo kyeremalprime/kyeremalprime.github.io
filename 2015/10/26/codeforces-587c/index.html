@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="Codeforces,Codeforces-Round-#325-(Div.2)," />
+  <meta name="keywords" content="Codeforces,Codeforces-Round-#326-(Div.1)," />
 
 
 
@@ -39,16 +39,18 @@
   <link rel="shorticon icon" type="image/x-icon" href="/images/favicon.jpG?v=0.4.5.1" />
 
 
-<meta name="description" content="Problem : http://codeforces.com/problemset/problem/586/A">
+<meta name="description" content="Problem : http://codeforces.com/problemset/problem/587/C">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Codeforces[586A]-Alena's Schedule">
-<meta property="og:url" content="http://zyq.sexy/2015/10/17/codeforces-586a/index.html">
+<meta property="og:title" content="Codeforces[587C]-Duff in the Army">
+<meta property="og:url" content="http://zyq.sexy/2015/10/26/codeforces-587c/index.html">
 <meta property="og:site_name" content="rnyz">
-<meta property="og:description" content="Problem : http://codeforces.com/problemset/problem/586/A">
-<meta property="og:updated_time" content="2015-10-21T08:04:51.000Z">
+<meta property="og:description" content="Problem : http://codeforces.com/problemset/problem/587/C">
+<meta property="og:image" content="http://zyq.sexy/images/quote/587C_1.png">
+<meta property="og:image" content="http://zyq.sexy/images/quote/587C_2.png">
+<meta property="og:updated_time" content="2015-10-26T02:40:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Codeforces[586A]-Alena's Schedule">
-<meta name="twitter:description" content="Problem : http://codeforces.com/problemset/problem/586/A">
+<meta name="twitter:title" content="Codeforces[587C]-Duff in the Army">
+<meta name="twitter:description" content="Problem : http://codeforces.com/problemset/problem/587/C">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -60,7 +62,7 @@
 
 
 
-  <title> Codeforces[586A]-Alena's Schedule | rnyz </title>
+  <title> Codeforces[587C]-Duff in the Army | rnyz </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -217,7 +219,7 @@
           
           
             
-              Codeforces[586A]-Alena's Schedule
+              Codeforces[587C]-Duff in the Army
             
           
         </h1>
@@ -226,8 +228,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-10-17T11:51:57+08:00" content="2015-10-17">
-            2015-10-17
+          <time itemprop="dateCreated" datetime="2015-10-26T10:23:30+08:00" content="2015-10-26">
+            2015-10-26
           </time>
         </span>
 
@@ -236,8 +238,8 @@
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/水题/" itemprop="url" rel="index">
-                  <span itemprop="name">水题</span>
+                <a href="/categories/倍增/" itemprop="url" rel="index">
+                  <span itemprop="name">倍增</span>
                 </a>
               </span>
 
@@ -252,8 +254,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/10/17/codeforces-586a/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/17/codeforces-586a/" itemprop="commentsCount"></span>
+              <a href="/2015/10/26/codeforces-587c/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/26/codeforces-587c/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -268,36 +270,42 @@
       
 
       
-        <span itemprop="articleBody"><p><a href="http://codeforces.com/problemset/problem/586/A" target="_blank" style="color: rgb(91, 165, 230); font-family: &#39;comic sans ms&#39;; text-decoration: none;"><span style="color: rgb(91, 165, 230); font-family: &#39;comic sans ms&#39;;">Problem : http://codeforces.com/problemset/problem/586/A</span></a><br><a id="more"></a></p>
+        <span itemprop="articleBody"><p><a href="http://codeforces.com/problemset/problem/587/C" target="_blank" style="color: rgb(91, 165, 230); font-family: &#39;comic sans ms&#39;; text-decoration: none;"><span style="color: rgb(91, 165, 230); font-family: &#39;comic sans ms&#39;;">Problem : http://codeforces.com/problemset/problem/587/C</span></a><br><a id="more"></a></p>
 <h2 id="Description">Description</h2><blockquote>
-<p>Alena has successfully passed the entrance exams to the university and is now looking forward to start studying.</p>
-<p>One two-hour lesson at the Russian university is traditionally called a pair, it lasts for two academic hours (an academic hour is equal to 45 minutes).</p>
-<p>The University works in such a way that every day it holds exactly n lessons. Depending on the schedule of a particular group of students, on a given day, some pairs may actually contain classes, but some may be empty (such pairs are called breaks).</p>
-<p>The official website of the university has already published the schedule for tomorrow for Alena’s group. Thus, for each of the n pairs she knows if there will be a class at that time or not.</p>
-<p>Alena’s House is far from the university, so if there are breaks, she doesn’t always go home. Alena has time to go home only if the break consists of at least two free pairs in a row, otherwise she waits for the next pair at the university.</p>
-<p>Of course, Alena does not want to be sleepy during pairs, so she will sleep as long as possible, and will only come to the first pair that is presented in her schedule. Similarly, if there are no more pairs, then Alena immediately goes home.</p>
-<p>Alena appreciates the time spent at home, so she always goes home when it is possible, and returns to the university only at the beginning of the next pair. Help Alena determine for how many pairs she will stay at the university. Note that during some pairs Alena may be at the university waiting for the upcoming pair.</p>
+<p>Recently Duff has been a soldier in the army. Malek is her commander.</p>
+<p>Their country, Andarz Gu has n cities (numbered from 1 to n) and n-1 bidirectional roads. Each road connects two different cities. There exist a unique path between any two cities.</p>
+<p>There are also m people living in Andarz Gu (numbered from 1 to m). Each person has and ID number. ID number of i-th person is i and he/she lives in city number <span>$c_i$</span><!-- Has MathJax -->. Note that there may be more than one person in a city, also there may be no people living in the city.</p>
 </blockquote>
-<h2 id="Input">Input</h2><blockquote>
-<p>The first line of the input contains a positive integer n (1 ≤ n ≤ 100) — the number of lessons at the university.</p>
-<p>The second line contains n numbers ai (0 ≤ ai ≤ 1). Number ai equals 0, if Alena doesn’t have the i-th pairs, otherwise it is equal to 1. Numbers a1, a2, …, an are separated by spaces.</p>
+<div style="text-align:center;"><br>    <img src="/images/quote/587C_1.png" alt="587C_1"><br></div>
+
+<blockquote>
+<p>Malek loves to order. That’s why he asks Duff to answer to q queries. In each query, he gives her numbers v, u and a.</p>
+<p>To answer a query:</p>
+<p>Assume there are x people living in the cities lying on the path from city v to city u. Assume these people’s IDs are <span>$p_1$</span><!-- Has MathJax -->, <span>$p_2$</span><!-- Has MathJax -->, …, <span>$p_x$</span><!-- Has MathJax --> in increasing order.</p>
+<p>If k = min(x, a), then Duff should tell Malek numbers <span>$k$</span><!-- Has MathJax -->, <span>$p_1$</span><!-- Has MathJax -->, <span>$p_2$</span><!-- Has MathJax -->, …, <span>$p_k$</span><!-- Has MathJax --> in this order. In the other words, Malek wants to know a minimums on that path (or less, if there are less than a people).</p>
+<p>Duff is very busy at the moment, so she asked you to help her and answer the queries.</p>
 </blockquote>
+<h2 id="Input">Input</h2><p>The first line of input contains three integers, n, m and q (1 ≤ n, m, q ≤ <span>$10^5$</span><!-- Has MathJax -->).</p>
+<p>The next n - 1 lines contain the roads. Each line contains two integers v and u, endpoints of a road (1 ≤ v, u ≤ n, v ≠ u).</p>
+<p>Next line contains m integers <span>$c_1$</span><!-- Has MathJax -->, <span>$c_2$</span><!-- Has MathJax -->, …, <span>$c_m$</span><!-- Has MathJax --> separated by spaces (1 ≤ <span>$c_i$</span><!-- Has MathJax --> ≤ n for each 1 ≤ i ≤ m).</p>
+<p>Next q lines contain the queries. Each of them contains three integers, v, u and a (1 ≤ v, u ≤ n and 1 ≤ a ≤ 10).</p>
 <h2 id="Output">Output</h2><blockquote>
-<p>Print a single number — the number of pairs during which Alena stays at the university.</p>
+<p>For each query, print numbers <span>$k$</span><!-- Has MathJax -->, <span>$p_1$</span><!-- Has MathJax -->, <span>$p_2$</span><!-- Has MathJax -->, …, <span>$p_k$</span><!-- Has MathJax --> separated by spaces in one line.</p>
 </blockquote>
 <h2 id="Sample_Input">Sample Input</h2><blockquote>
-<p>5<br>0 1 0 1 1</p>
+<p>5 4 5<br>1 3<br>1 2<br>1 4<br>4 5<br>2 1 4 3<br>4 5 6<br>1 5 2<br>5 5 10<br>2 3 3<br>5 3 1</p>
 </blockquote>
 <h2 id="Sample_Output">Sample Output</h2><blockquote>
-<p>4</p>
+<p>1 3<br>2 2 3<br>0<br>3 1 2 4<br>1 2</p>
 </blockquote>
 <h2 id="Hint">Hint</h2><blockquote>
-<p>In the first sample Alena stays at the university from the second to the fifth pair, inclusive, during the third pair she will be it the university waiting for the next pair.</p>
-<p>In the last sample Alena doesn’t have a single pair, so she spends all the time at home.</p>
+<p>Graph of Andarz Gu in the sample case is as follows (ID of people in each city are written next to them):</p>
 </blockquote>
-<h2 id="Trans">Trans</h2><p>给定长度为n的0/1序列, 表示上课的列表<br>当大于等于连续的两节课都没有安排时, Alena便可以回家, 等到需要上课时返校<br>求在学校的时间</p>
-<h2 id="Solution">Solution</h2><p>暴力</p>
-<h2 id="Code">Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> rep(i, l, r) for (int i = l; i &lt;= r; i++)</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> REP(i, l, r) for (int i = l; i &gt;= r; i--)</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> MAXN <span class="number">1010</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">0</span>, f = <span class="number">1</span>; <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span> (ch&lt;<span class="string">'0'</span> || ch&gt;<span class="string">'9'</span>) &#123;<span class="keyword">if</span> (ch == <span class="string">'-'</span>) f = -<span class="number">1</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span> (ch&gt;=<span class="string">'0'</span> &amp;&amp; ch&lt;=<span class="string">'9'</span>) x = x*<span class="number">10</span> + ch - <span class="string">'0'</span>, ch = getchar();</span><br><span class="line">    <span class="keyword">return</span> x*f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, a[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    n = read();</span><br><span class="line">    rep(i, <span class="number">1</span>, n) a[i] = read();</span><br><span class="line">    rep(i, <span class="number">2</span>, n-<span class="number">1</span>) <span class="keyword">if</span> (!a[i] &amp;&amp; a[i-<span class="number">1</span>] &amp;&amp; a[i+<span class="number">1</span>]) a[i] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    rep(i, <span class="number">1</span>, n) ans += a[i];</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<div style="text-align:center;"><br>    <img src="/images/quote/587C_2.png" alt="587C_2"><br></div>
+
+<h2 id="Trans">Trans</h2><p>给定一棵树<br>每个点上有一些人<br>询问从u到v, 标号最小的a个人</p>
+<h2 id="Solution">Solution</h2><p>像求LCA倍增那样<br>预处理之后, 统计i到i的<span>$2^j$</span><!-- Has MathJax -->祖先的前a个点</p>
+<h2 id="Code">Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> rep(i, l, r) for (int i = l; i &lt;= r; i++)</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> REP(i, l, r) for (int i = l; i &gt;= r; i--)</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> LEN(a) (int(a.size()))</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> MAXN <span class="number">100010</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">0</span>, f = <span class="number">1</span>; <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span> (ch&lt;<span class="string">'0'</span> || ch&gt;<span class="string">'9'</span>) &#123;<span class="keyword">if</span> (ch == <span class="string">'-'</span>) f = -<span class="number">1</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span> (ch&gt;=<span class="string">'0'</span> &amp;&amp; ch&lt;=<span class="string">'9'</span>) x = x*<span class="number">10</span> + ch - <span class="string">'0'</span>, ch = getchar();</span><br><span class="line">    <span class="keyword">return</span> x*f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, m, first[MAXN], next[MAXN], fa[MAXN][<span class="number">30</span>], dep[MAXN], length, N = -<span class="number">1</span>, root;</span><br><span class="line"><span class="keyword">struct</span> tlist &#123;<span class="keyword">int</span> x, y;&#125; a[MAXN];</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; p[MAXN], f[MAXN][<span class="number">30</span>];</span><br><span class="line"><span class="keyword">bool</span> vis[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">    a[++N].x = x, a[N].y = y, next[N] = first[x], first[x] = N;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> d)</span> </span>&#123;</span><br><span class="line">    vis[x] = <span class="number">1</span>;</span><br><span class="line">    dep[x] = d;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = first[x]; ~i; i = next[i])</span><br><span class="line">        <span class="keyword">if</span> (!vis[a[i].y])</span><br><span class="line">            fa[a[i].y][<span class="number">0</span>] = x, dfs(a[i].y, d+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">inline</span> <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; unionv(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; a, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; b, <span class="keyword">int</span> length) &#123;</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; ans; ans.clear();</span><br><span class="line">    rep(i, <span class="number">0</span>, LEN(a)-<span class="number">1</span>) ans.push_back(a[i]);</span><br><span class="line">    rep(i, <span class="number">0</span>, LEN(b)-<span class="number">1</span>) ans.push_back(b[i]);</span><br><span class="line">    sort(ans.begin(), ans.end());</span><br><span class="line">    <span class="keyword">if</span> (LEN(ans) &gt; length)</span><br><span class="line">        ans.resize(length);</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">lca_init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    rep(j, <span class="number">1</span>, <span class="number">17</span>)</span><br><span class="line">        rep(i, <span class="number">1</span>, n)</span><br><span class="line">            fa[i][j] = fa[fa[i][j-<span class="number">1</span>]][j-<span class="number">1</span>];</span><br><span class="line">    rep(i, <span class="number">1</span>, n)</span><br><span class="line">        <span class="keyword">if</span> (i != root)</span><br><span class="line">            f[i][<span class="number">0</span>] = p[fa[i][<span class="number">0</span>]];</span><br><span class="line">    rep(j, <span class="number">1</span>, <span class="number">17</span>)</span><br><span class="line">        rep(i, <span class="number">1</span>, n)</span><br><span class="line">            f[i][j] = unionv(f[i][j-<span class="number">1</span>], f[fa[i][j-<span class="number">1</span>]][j-<span class="number">1</span>], length);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(first, -<span class="number">1</span>, <span class="keyword">sizeof</span>(first));</span><br><span class="line">    <span class="built_in">memset</span>(next, -<span class="number">1</span>, <span class="keyword">sizeof</span>(next));</span><br><span class="line">    <span class="built_in">memset</span>(fa, <span class="number">0</span>, <span class="keyword">sizeof</span>(fa));</span><br><span class="line">    n = read(), m = read(); <span class="keyword">int</span> T_T = read();</span><br><span class="line">    rep(i, <span class="number">1</span>, n-<span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">int</span> tx = read(), ty = read();</span><br><span class="line">        add(tx, ty), add(ty, tx);</span><br><span class="line">        fa[ty][<span class="number">0</span>] = tx;</span><br><span class="line">        <span class="keyword">if</span> (!fa[tx][<span class="number">0</span>]) root = tx;</span><br><span class="line">    &#125;</span><br><span class="line">    rep(i, <span class="number">1</span>, m) &#123;</span><br><span class="line">        <span class="keyword">int</span> t = read();</span><br><span class="line">        p[t].push_back(i);</span><br><span class="line">    &#125;</span><br><span class="line">    length = <span class="number">10</span>;</span><br><span class="line">    dfs(root, <span class="number">0</span>);</span><br><span class="line">    lca_init();</span><br><span class="line">    <span class="keyword">while</span> (T_T--) &#123;</span><br><span class="line">        <span class="keyword">int</span> tx = read(), ty = read(), xx = read();</span><br><span class="line">        <span class="keyword">if</span> (dep[tx] &lt; dep[ty]) swap(tx, ty);</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; v1 = p[tx], v2 = p[ty];</span><br><span class="line">        <span class="keyword">int</span> delta = dep[tx] - dep[ty];</span><br><span class="line">        rep(i, <span class="number">0</span>, <span class="number">17</span>)</span><br><span class="line">            <span class="keyword">if</span> ((<span class="number">1</span>&lt;&lt;i) &amp; delta) &#123;</span><br><span class="line">                v1 = unionv(v1, f[tx][i], xx);</span><br><span class="line">                tx = fa[tx][i]; </span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">if</span> (tx == ty) &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d"</span>, min(xx, LEN(v1)));</span><br><span class="line">            rep(i, <span class="number">0</span>, min(xx-<span class="number">1</span>, LEN(v1)-<span class="number">1</span>)) <span class="built_in">printf</span>(<span class="string">" %d"</span>, v1[i]);</span><br><span class="line">            <span class="built_in">puts</span>(<span class="string">""</span>);</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        REP(i, <span class="number">17</span>, <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">if</span> (fa[tx][i] != fa[ty][i]) &#123;</span><br><span class="line">                v1 = unionv(v1, f[tx][i], xx);</span><br><span class="line">                v2 = unionv(v2, f[ty][i], xx);</span><br><span class="line">                tx = fa[tx][i], ty = fa[ty][i];</span><br><span class="line">            &#125;</span><br><span class="line">        v1 = unionv(v1, v2, xx);</span><br><span class="line">        v1 = unionv(v1, p[fa[tx][<span class="number">0</span>]], xx);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d"</span>, min(xx, LEN(v1)));</span><br><span class="line">        rep(i, <span class="number">0</span>, min(xx-<span class="number">1</span>, LEN(v1)-<span class="number">1</span>)) <span class="built_in">printf</span>(<span class="string">" %d"</span>, v1[i]);</span><br><span class="line">        <span class="built_in">puts</span>(<span class="string">""</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </span>
       
     </div>
@@ -308,7 +316,7 @@
           
             <a href="/tags/Codeforces/" rel="tag">#Codeforces</a>
           
-            <a href="/tags/Codeforces-Round-325-Div-2/" rel="tag">#Codeforces-Round-#325-(Div.2)</a>
+            <a href="/tags/Codeforces-Round-326-Div-1/" rel="tag">#Codeforces-Round-#326-(Div.1)</a>
           
         </div>
       
@@ -317,13 +325,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/10/19/codeforces-586b/" rel="prev">Codeforces[586B]-Laurenty and Shop</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/10/17/hello-world/" rel="next">Hello World</a>
+              <a href="/2015/10/22/poj-1330/" rel="next">POJ[1330]-Nearest Common Ancestors</a>
             
           </div>
         </div>
@@ -371,8 +377,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/10/17/codeforces-586a/"
-                   data-title="Codeforces[586A]-Alena's Schedule" data-url="http://zyq.sexy/2015/10/17/codeforces-586a/">
+              <div class="ds-thread" data-thread-key="2015/10/26/codeforces-587c/"
+                   data-title="Codeforces[587C]-Duff in the Army" data-url="http://zyq.sexy/2015/10/26/codeforces-587c/">
               </div>
             
           </div>
