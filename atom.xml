@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://zyq.sexy/"/>
-  <updated>2015-10-29T03:00:21.000Z</updated>
+  <updated>2015-10-29T04:25:27.000Z</updated>
   <id>http://zyq.sexy/</id>
   
   <author>
@@ -13,6 +13,45 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[FZU[1483]-奖金]]></title>
+    <link href="http://zyq.sexy/2015/10/29/fzu1483/"/>
+    <id>http://zyq.sexy/2015/10/29/fzu1483/</id>
+    <published>2015-10-29T04:23:35.000Z</published>
+    <updated>2015-10-29T04:25:27.000Z</updated>
+    <content type="html"><![CDATA[<p><a href="http://acm.fzu.edu.cn/problem.php?pid=1483" target="_blank" style="color: rgb(91, 165, 230); font-family: &#39;comic sans ms&#39;; text-decoration: none;"><span style="color: rgb(91, 165, 230); font-family: &#39;comic sans ms&#39;;">Problem : http://acm.fzu.edu.cn/problem.php?pid=1483</span></a><br><a id="more"></a></p>
+<h2 id="Description">Description</h2><blockquote>
+<p>阿甘开了家公司，为了表示民主，允许每个员工对自己的奖金发表意见。每位员工只能说：“我认为员工a的奖金应该比b高！”公司总裁阿甘决定要找出一种奖金方案，满足各位员工的意见，且同时使得总奖金数最少。每位员工奖金最少为100元。</p>
+</blockquote>
+<h2 id="Input">Input</h2><blockquote>
+<p>本题有多组输入数据，你必须处理到EOF为止<br>每组数据第一行两个整数n,m(0&lt;n&lt;=10000,0&lt;m&lt;=20000)，表示员工总数和意见数；<br>以下m行，每行2个整数a,b，表示某个意见认为第a号员工奖金应该比第b号员工高。</p>
+</blockquote>
+<h2 id="Output">Output</h2><blockquote>
+<p>对于每组数据若无法找到合法方案，则输出Poor Xed, 否则输出一个数表示最少总奖金。</p>
+</blockquote>
+<h2 id="Sample_Input">Sample Input</h2><blockquote>
+<p>2 1<br>1 2</p>
+</blockquote>
+<h2 id="Sample_Output">Sample Output</h2><blockquote>
+<p>201</p>
+</blockquote>
+<h2 id="Hint">Hint</h2><blockquote>
+<p>0&lt;n&lt;=10000,0&lt;m&lt;=20000</p>
+</blockquote>
+<h2 id="Solution">Solution</h2><p>拓扑排序</p>
+<h2 id="Code">Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> rep(i, l, r) for (int i = l; i &lt;= r; i++)</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> REP(i, l, r) for (int i = l; i &gt;= r; i--)</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> MAXN <span class="number">100010</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">0</span>, f = <span class="number">1</span>; <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span> (ch&lt;<span class="string">'0'</span> || ch&gt;<span class="string">'9'</span>) &#123;<span class="keyword">if</span> (ch == <span class="string">'-'</span>) f = -<span class="number">1</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span> (ch&gt;=<span class="string">'0'</span> &amp;&amp; ch&lt;=<span class="string">'9'</span>) x = x*<span class="number">10</span> + ch - <span class="string">'0'</span>, ch = getchar();</span><br><span class="line">    <span class="keyword">return</span> x*f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, m, N = -<span class="number">1</span>, first[MAXN], next[MAXN], fa[MAXN], d[MAXN];</span><br><span class="line"><span class="keyword">bool</span> xed = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">struct</span> tlist &#123;<span class="keyword">int</span> x, y;&#125; a[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">    a[++N].x = x, a[N].y = y, next[N] = first[x], first[x] = N;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> S, <span class="keyword">int</span> x, <span class="keyword">int</span> dep)</span> </span>&#123;</span><br><span class="line">    d[x] = max(d[x], dep); </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = first[x]; ~i; i = next[i]) &#123;</span><br><span class="line">        <span class="keyword">if</span> (a[i].y==S || xed) &#123;xed = <span class="number">1</span>; <span class="keyword">return</span>;&#125;</span><br><span class="line">        dfs(S, a[i].y, dep+<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(first, -<span class="number">1</span>, <span class="keyword">sizeof</span>(first));</span><br><span class="line">    <span class="built_in">memset</span>(next, -<span class="number">1</span>, <span class="keyword">sizeof</span>(next));</span><br><span class="line">    <span class="built_in">memset</span>(d, <span class="number">0</span>, <span class="keyword">sizeof</span>(d));</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;m) != EOF) &#123;</span><br><span class="line">        xed = <span class="number">0</span>;</span><br><span class="line">        rep(i, <span class="number">1</span>, m) &#123;</span><br><span class="line">            <span class="keyword">int</span> tx = read(), ty = read();</span><br><span class="line">            fa[tx] = ty;</span><br><span class="line">            add(ty, tx);</span><br><span class="line">        &#125;</span><br><span class="line">        rep(i, <span class="number">1</span>, n) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!fa[i] &amp;&amp; !d[i]) dfs(i, i, <span class="number">0</span>);</span><br><span class="line">            <span class="keyword">if</span> (xed) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (xed) &#123;<span class="built_in">puts</span>(<span class="string">"Poor Xed"</span>); <span class="keyword">continue</span>;&#125;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        rep(i, <span class="number">1</span>, n) sum += <span class="number">100</span> + d[i];</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, sum);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><a href="http://acm.fzu.edu.cn/problem.php?pid=1483" target="_blank" style="color: rgb(91, 165, 230); font-family: &#39;comic sans ms&#39;; text-decoration: none;"><span style="color: rgb(91, 165, 230); font-family: &#39;comic sans ms&#39;;">Problem : http://acm.fzu.edu.cn/problem.php?pid=1483</span></a><br>]]>
+    
+    </summary>
+    
+      <category term="FZU" scheme="http://zyq.sexy/tags/FZU/"/>
+    
+      <category term="拓扑排序" scheme="http://zyq.sexy/categories/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[RQNOJ[28]-[Stupid]愚蠢的宠物]]></title>
