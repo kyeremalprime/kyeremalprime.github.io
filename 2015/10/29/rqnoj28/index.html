@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="Codeforces,Codeforces-Round#326-Div1," />
+  <meta name="keywords" content="RQNOJ," />
 
 
 
@@ -39,17 +39,16 @@
   <link rel="shorticon icon" type="image/x-icon" href="/images/favicon.jpG?v=0.4.5.1" />
 
 
-<meta name="description" content="Problem : http://codeforces.com/problemset/problem/587/B">
+<meta name="description" content="Problem : http://www.rqnoj.cn/problem/28">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Codeforces[587B]-Duff in Beach">
-<meta property="og:url" content="http://zyq.sexy/2015/10/21/codeforces-587b/index.html">
+<meta property="og:title" content="RQNOJ[28]-[Stupid]愚蠢的宠物">
+<meta property="og:url" content="http://zyq.sexy/2015/10/29/rqnoj28/index.html">
 <meta property="og:site_name" content="rnyz">
-<meta property="og:description" content="Problem : http://codeforces.com/problemset/problem/587/B">
-<meta property="og:image" content="http://zyq.sexy/images/quote/587B_1.png">
-<meta property="og:updated_time" content="2015-10-21T08:24:51.000Z">
+<meta property="og:description" content="Problem : http://www.rqnoj.cn/problem/28">
+<meta property="og:updated_time" content="2015-10-29T03:00:21.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Codeforces[587B]-Duff in Beach">
-<meta name="twitter:description" content="Problem : http://codeforces.com/problemset/problem/587/B">
+<meta name="twitter:title" content="RQNOJ[28]-[Stupid]愚蠢的宠物">
+<meta name="twitter:description" content="Problem : http://www.rqnoj.cn/problem/28">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -61,7 +60,7 @@
 
 
 
-  <title> Codeforces[587B]-Duff in Beach | rnyz </title>
+  <title> RQNOJ[28]-[Stupid]愚蠢的宠物 | rnyz </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -218,7 +217,7 @@
           
           
             
-              Codeforces[587B]-Duff in Beach
+              RQNOJ[28]-[Stupid]愚蠢的宠物
             
           
         </h1>
@@ -227,8 +226,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-10-21T15:24:55+08:00" content="2015-10-21">
-            2015-10-21
+          <time itemprop="dateCreated" datetime="2015-10-29T10:57:51+08:00" content="2015-10-29">
+            2015-10-29
           </time>
         </span>
 
@@ -237,8 +236,8 @@
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/动态规划/" itemprop="url" rel="index">
-                  <span itemprop="name">动态规划</span>
+                <a href="/categories/水题/" itemprop="url" rel="index">
+                  <span itemprop="name">水题</span>
                 </a>
               </span>
 
@@ -253,8 +252,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/10/21/codeforces-587b/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/21/codeforces-587b/" itemprop="commentsCount"></span>
+              <a href="/2015/10/29/rqnoj28/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/29/rqnoj28/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -269,61 +268,28 @@
       
 
       
-        <span itemprop="articleBody"><p><a href="http://codeforces.com/problemset/problem/587/B" target="_blank" style="color: rgb(91, 165, 230); font-family: &#39;comic sans ms&#39;; text-decoration: none;"><span style="color: rgb(91, 165, 230); font-family: &#39;comic sans ms&#39;;">Problem : http://codeforces.com/problemset/problem/587/B</span></a><br><a id="more"></a></p>
+        <span itemprop="articleBody"><p><a href="http://www.rqnoj.cn/problem/28" target="_blank" style="color: rgb(91, 165, 230); font-family: &#39;comic sans ms&#39;; text-decoration: none;"><span style="color: rgb(91, 165, 230); font-family: &#39;comic sans ms&#39;;">Problem : http://www.rqnoj.cn/problem/28</span></a><br><a id="more"></a></p>
 <h2 id="Description">Description</h2><blockquote>
-<p>While Duff was resting in the beach, she accidentally found a strange array <span>$b_0$</span><!-- Has MathJax -->, <span>$b_1$</span><!-- Has MathJax -->, …, <span>$b_l-1$</span><!-- Has MathJax --> consisting of l positive integers. This array was strange because it was extremely long, but there was another (maybe shorter) array, <span>$a_0$</span><!-- Has MathJax -->, …, <span>$a_n-1$</span><!-- Has MathJax --> that b can be build from a with formula: <span>$b_i=a_i~mod~n$</span><!-- Has MathJax --> where a mod b denoted the remainder of dividing a by b.</p>
-</blockquote>
-<div style="text-align:center;"><br>    <img src="/images/quote/587B_1.png" alt="codeforces587B_1"><br></div>
-
-<blockquote>
-<p>Duff is so curious, she wants to know the number of subsequences of b like <span>$b_{i_1}$</span><!-- Has MathJax -->, <span>$b_{i_2}$</span><!-- Has MathJax -->, …, <span>$b_{i_x}$</span><!-- Has MathJax --> (0 ≤ <span>$i_1$</span><!-- Has MathJax --> &lt; <span>$i_2$</span><!-- Has MathJax --> &lt; … &lt; <span>$i_x$</span><!-- Has MathJax --> &lt; <span>$l$</span><!-- Has MathJax -->), such that:</p>
-<ul>
-<li>1 ≤ x ≤ k</li>
-<li>For each 1 ≤ j ≤ x-1, <span>$\lfloor \frac{i_j}{n} \rfloor + 1 = \lfloor \frac{i_{j+1}}{n} \rfloor$</span><!-- Has MathJax --></li>
-<li>For each 1 ≤ j ≤ x-1, <span>$b_{i_j}$</span><!-- Has MathJax --> ≤ <span>$b_{i_{j+1}}$</span><!-- Has MathJax -->. i.e this subsequence is non-decreasing.</li>
-</ul>
+<p>大家都知道，sheep有两只可爱的宠物（一只叫神牛，一只叫神菜）。有一天，sheep带着两只宠物到狗狗家时，这两只可爱的宠物竟然迷路了……</p>
+<p>狗狗的家因为常常遭到猫猫的攻击，所以不得不把家里前院的路修得非常复杂。狗狗家前院有N个连通的分叉结点，且只有N-1条路连接这N个节点，节点的编号是1-N（1为根节点）。sheep的宠物非常笨，他们只会向前走，不会退后（只向双亲节点走），sheep想知道他们最早什么时候会相遇（即步数最少）。</p>
 </blockquote>
 <h2 id="Input">Input</h2><blockquote>
-<p>The first line of input contains three integers, n, l and k (1 ≤ n, k, n × k ≤ <span>$10^6$</span><!-- Has MathJax --> and 1 ≤ l ≤ <span>$10^{18}$</span><!-- Has MathJax -->).</p>
-<p>The second line contains n space separated integers, <span>$a_0$</span><!-- Has MathJax -->, <span>$a_1$</span><!-- Has MathJax -->, …, <span>$a_{n-1}$</span><!-- Has MathJax --> (1 ≤ <span>$a_i$</span><!-- Has MathJax --> ≤ <span>$10^9$</span><!-- Has MathJax --> for each 0 ≤ i ≤ n-1).</p>
+<p>第1行：一个正整数N，表示节点个数。<br>第2~N行：两个非负整数A和B，表示A是B的双亲。（保证A,B&lt;=n）<br>第N+1行：两个非负整数A和B，表示两只宠物所在节点的位置。（保证A,B&lt;=n）</p>
 </blockquote>
 <h2 id="Output">Output</h2><blockquote>
-<p>Print the answer modulo <span>$1000000007$</span><!-- Has MathJax --> in one line.</p>
+<p>输出他们最早相遇的节点号。</p>
 </blockquote>
 <h2 id="Sample_Input">Sample Input</h2><blockquote>
-<p>3 5 3<br>5 9 1</p>
+<p>10<br>1 2<br>1 3<br>1 4<br>2 5<br>2 6<br>3 7<br>4 8<br>4 9<br>4 10<br>3 6</p>
 </blockquote>
 <h2 id="Sample_Output">Sample Output</h2><blockquote>
-<p>10</p>
+<p>1</p>
 </blockquote>
-<h2 id="Hint">Hint</h2><p>In the first sample case, <span>$b=&lt;5, 9, 1, 5, 9&gt;$</span><!-- Has MathJax -->. So all such sequences are: <span>$&lt;b_0&gt;=&lt;5&gt;$</span><!-- Has MathJax -->, <span>$&lt;b_1&gt;=&lt;9&gt;$</span><!-- Has MathJax -->, <span>$&lt;b_2&gt;=&lt;1&gt;$</span><!-- Has MathJax -->, <span>$&lt;b_3&gt;=&lt;5&gt;$</span><!-- Has MathJax -->, <span>$&lt;b_4&gt;=&lt;9&gt;$</span><!-- Has MathJax -->, <span>$&lt;b_0, b_3&gt;=&lt;5, 5&gt;$</span><!-- Has MathJax -->, <span>$&lt;b_0, b_4&gt;=&lt;5, 9&gt;$</span><!-- Has MathJax -->, <span>$&lt;b_1, b_4&gt;=&lt;9, 9&gt;$</span><!-- Has MathJax -->, <span>$&lt;b_2, b_3&gt;=&lt;1, 5&gt;$</span><!-- Has MathJax --> and <span>$&lt;b_2, b_4&gt;=&lt;1, 9&gt;$</span><!-- Has MathJax -->.</p>
-<h2 id="Trans">Trans</h2><p>给你n,l,k，然后就是告诉你b有l长度，其中是由a不停重复得到的<br>然后问你一共有多少个满足条件的序列存在<br>条件如下：</p>
-<ol>
-<li>这个序列的长度大于等于1，小于等于k</li>
-<li>这个序列在每一个块中只能选择一个数，并且都必须选择在连续的块中</li>
-<li>这个序列是单调不降的</li>
-</ol>
-<h2 id="Solution">Solution</h2><p>很简单的题- -因为乘法爆int,WA了一下午.. </p>
-<blockquote>
-<p>条件は一見ややこしいが、言い換えると以下のとおりである。</p>
-<ul>
-<li>BはAをL/N回繰り返したものである。(L%N分ちょっとあまるが)</li>
-<li>そこから、Aを連続x回分抜き出したものを選ぶ。(約L/N-x+1通り)</li>
-<li>そのx回分の繰り返しから、1個ずつ要素を抜き出して順に並べると、その要素が昇順になるようにしたい。  </li>
-</ul>
-<p><strong> さらに言い換えると、「Aの要素から1個取り出すことをx回行い、順に並べるとそれらが昇順になるようにする」である。</strong></p>
-<p>上２つの事は後回しにして、最後の行の内容に関して、Iの長さxについて1≦x≦Kを順に処理して行けば良い。<br>最初にAを座標圧縮しておくと、累積和を使うことで最後の条件を満たす組み合わせができる。<br>各組み合わせに関し（L/N-x+1）を掛けていけば良い。<br>ただしL%Nが非0の場合、一部の要素を末尾にする場合で「Aを連続x回分抜き出したものを選ぶ」の選び方が１ずれるので注意。</p>
+<h2 id="Hint">Hint</h2><blockquote>
+<p>N的范围《=1000000</p>
 </blockquote>
-<p>以上内容来自:<a href="http://kmjp.hatenablog.jp/entry/2015/10/17/1030" target="_blank" style="color: rgb(91, 165, 230); font-family: &#39;comic sans ms&#39;; text-decoration: none;"><span style="color: rgb(91, 165, 230); font-family: &#39;comic sans ms&#39;;">http://kmjp.hatenablog.jp/entry/2015/10/17/1030</span></a></p>
-<p>大概的意思就是:<br>类似分块, dp做块与块之间, 最后一个不完整的块暴力<br><span>$dp_{ij}$</span><!-- Has MathJax -->表示长度为<span>$i$</span><!-- Has MathJax -->, 以排序后第<span>$j$</span><!-- Has MathJax -->个数字结尾的方案总数<br>然后乱搞搞  </p>
-<ul>
-<li><p>注意 *<br>两个int相乘, 比如:  </p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> c = a * b</span><br></pre></td></tr></table></figure>
-<p>如果答案会爆int, 一定要写成:</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> c = (<span class="keyword">long</span> <span class="keyword">long</span>)(a) * b</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="Code">Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> rep(i, l, r) for (LL i = l; i &lt;= r; i++)</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> REP(i, l, r) for (LL i = l; i &gt;= r; i--)</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> LEN(a) (LL(a.size()))</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> MOD (<span class="number">1000000007L</span>L)</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> MAXN int(<span class="number">1e6</span>) + <span class="number">10</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> LL <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    LL x = <span class="number">0</span>, f = <span class="number">1</span>; <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span> (ch&lt;<span class="string">'0'</span> || ch&gt;<span class="string">'9'</span>) &#123;<span class="keyword">if</span> (ch == <span class="string">'-'</span>) f = -<span class="number">1</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span> (ch&gt;=<span class="string">'0'</span> &amp;&amp; ch&lt;=<span class="string">'9'</span>) x = x*<span class="number">10</span> + ch - <span class="string">'0'</span>, ch = getchar();</span><br><span class="line">    <span class="keyword">return</span> x*f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">LL n, l, k, a[MAXN], len, ans = <span class="number">0</span>;</span><br><span class="line">LL t[MAXN];</span><br><span class="line"><span class="built_in">vector</span>&lt;LL&gt; f[MAXN], sum[MAXN];</span><br><span class="line"><span class="built_in">map</span>&lt;LL, LL&gt; mp;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    n = read(), l = read(), k = read();    </span><br><span class="line">    rep(i, <span class="number">1</span>, n) t[i] = a[i] = read();</span><br><span class="line">    sort(t+<span class="number">1</span>, t+<span class="number">1</span>+n);</span><br><span class="line">    rep(i, <span class="number">1</span>, n) mp[t[i]] = i;</span><br><span class="line">    rep(i, <span class="number">0</span>, k) rep(j, <span class="number">0</span>, n+<span class="number">1</span>) f[i].push_back(<span class="number">0</span>), sum[i].push_back(<span class="number">0</span>);</span><br><span class="line">    rep(i, <span class="number">1</span>, n+<span class="number">1</span>) f[<span class="number">1</span>][i] = <span class="number">1</span>, sum[<span class="number">1</span>][i] = sum[<span class="number">1</span>][i-<span class="number">1</span>] + f[<span class="number">1</span>][i];</span><br><span class="line">    rep(i, <span class="number">2</span>, k)</span><br><span class="line">        rep(j, <span class="number">1</span>, n) &#123;</span><br><span class="line">            LL *pos = upper_bound(t+<span class="number">1</span>, t+<span class="number">1</span>+n, t[j]);</span><br><span class="line">            LL p = pos - t;</span><br><span class="line">            f[i][j] = (sum[i-<span class="number">1</span>][p-<span class="number">1</span>]) % MOD;</span><br><span class="line">            sum[i][j] = (sum[i][j-<span class="number">1</span>] + f[i][j]) % MOD;</span><br><span class="line">        &#125;</span><br><span class="line">    len = l / n;</span><br><span class="line">    rep(i, <span class="number">1</span>, min(len, k)) ans += ((len-i+<span class="number">1</span>) % MOD) * sum[i][n], ans %= MOD;</span><br><span class="line">    rep(i, <span class="number">1</span>, l - len*n) rep(j, <span class="number">1</span>, min(len+<span class="number">1</span>, k)) ans += f[j][mp[a[i]]], ans %= MOD;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Solution">Solution</h2><p>记录每个点的father<br>然后顺着往上</p>
+<h2 id="Code">Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> rep(i, l, r) for (int i = l; i &lt;= r; i++)</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> REP(i, l, r) for (int i = l; i &gt;= r; i--)</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> MAXN <span class="number">1000010</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">0</span>, f = <span class="number">1</span>; <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span> (ch&lt;<span class="string">'0'</span> || ch&gt;<span class="string">'9'</span>) &#123;<span class="keyword">if</span> (ch == <span class="string">'-'</span>) f = -<span class="number">1</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span> (ch&gt;=<span class="string">'0'</span> &amp;&amp; ch&lt;=<span class="string">'9'</span>) x = x*<span class="number">10</span> + ch - <span class="string">'0'</span>, ch = getchar();</span><br><span class="line">    <span class="keyword">return</span> x*f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, fa[MAXN];</span><br><span class="line"><span class="keyword">bool</span> vis[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    fa[<span class="number">1</span>] = -<span class="number">1</span>;</span><br><span class="line">    n = read(); </span><br><span class="line">    rep(i, <span class="number">1</span>, n-<span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">int</span> tx = read(), ty = read();</span><br><span class="line">        fa[ty] = tx;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">    <span class="keyword">int</span> x = read(), y = read();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = x; ~i; vis[i] = <span class="number">1</span>, i = fa[i]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = y; ~i; i = fa[i]) <span class="keyword">if</span> (vis[i]) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, i);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </span>
       
     </div>
@@ -332,9 +298,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Codeforces/" rel="tag">#Codeforces</a>
-          
-            <a href="/tags/Codeforces-Round-326-Div1/" rel="tag">#Codeforces-Round#326-Div1</a>
+            <a href="/tags/RQNOJ/" rel="tag">#RQNOJ</a>
           
         </div>
       
@@ -343,13 +307,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/10/22/poj-1330/" rel="prev">POJ[1330]-Nearest Common Ancestors</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/10/19/codeforces-587a/" rel="next">Codeforces[587A]-duff and Weight Lifting</a>
+              <a href="/2015/10/29/codevs1073/" rel="next">codeVS[1073]-家族</a>
             
           </div>
         </div>
@@ -397,8 +359,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/10/21/codeforces-587b/"
-                   data-title="Codeforces[587B]-Duff in Beach" data-url="http://zyq.sexy/2015/10/21/codeforces-587b/">
+              <div class="ds-thread" data-thread-key="2015/10/29/rqnoj28/"
+                   data-title="RQNOJ[28]-[Stupid]愚蠢的宠物" data-url="http://zyq.sexy/2015/10/29/rqnoj28/">
               </div>
             
           </div>
@@ -524,7 +486,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Input"><span class="nav-number">2.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output"><span class="nav-number">3.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample_Input"><span class="nav-number">4.</span> <span class="nav-text">Sample Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample_Output"><span class="nav-number">5.</span> <span class="nav-text">Sample Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hint"><span class="nav-number">6.</span> <span class="nav-text">Hint</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Trans"><span class="nav-number">7.</span> <span class="nav-text">Trans</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">8.</span> <span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code"><span class="nav-number">9.</span> <span class="nav-text">Code</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Input"><span class="nav-number">2.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output"><span class="nav-number">3.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample_Input"><span class="nav-number">4.</span> <span class="nav-text">Sample Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample_Output"><span class="nav-number">5.</span> <span class="nav-text">Sample Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hint"><span class="nav-number">6.</span> <span class="nav-text">Hint</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">7.</span> <span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code"><span class="nav-number">8.</span> <span class="nav-text">Code</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
