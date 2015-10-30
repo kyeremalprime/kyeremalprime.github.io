@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://zyq.sexy/"/>
-  <updated>2015-10-30T00:49:34.000Z</updated>
+  <updated>2015-10-30T03:19:48.000Z</updated>
   <id>http://zyq.sexy/</id>
   
   <author>
@@ -13,6 +13,48 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[codeVS[1506]-传话]]></title>
+    <link href="http://zyq.sexy/2015/10/30/codevs1506/"/>
+    <id>http://zyq.sexy/2015/10/30/codevs1506/</id>
+    <published>2015-10-30T03:16:54.000Z</published>
+    <updated>2015-10-30T03:19:48.000Z</updated>
+    <content type="html"><![CDATA[<p><a href="http://codevs.cn/problem/1506/" target="_blank" style="color: rgb(91, 165, 230); font-family: &#39;comic sans ms&#39;; text-decoration: none;"><span style="color: rgb(91, 165, 230); font-family: &#39;comic sans ms&#39;;">Problem : http://codevs.cn/problem/1506/</span></a><br><a id="more"></a></p>
+<h2 id="Description">Description</h2><blockquote>
+<p>一个朋友网络，如果a认识b，那么如果a第一次收到某个消息，那么会把这个消息传给b，以及所有a认识的人。</p>
+<p>如果a认识b，b不一定认识a。</p>
+<p>所有人从1到n编号，给出所有“认识”关系，问如果i发布一条新消息，那么会不会经过若干次传话后，这个消息传回给了i，1&lt;=i&lt;=n。</p>
+</blockquote>
+<h2 id="Input">Input</h2><blockquote>
+<p>第一行是n和m，表示人数和认识关系数。</p>
+<p>接下来的m行，每行两个数a和b，表示a认识b。1&lt;=a, b&lt;=n。认识关系可能会重复给出，但一行的两个数不会相同。</p>
+</blockquote>
+<h2 id="Output">Output</h2><blockquote>
+<p>一共n行，每行一个字符T或F。第i行如果是T，表示i发出一条新消息会传回给i；如果是F，表示i发出一条新消息不会传回给i。</p>
+</blockquote>
+<h2 id="Sample_Input">Sample Input</h2><blockquote>
+<p>4 6<br>1 2<br>2 3<br>4 1<br>3 1<br>1 3<br>2 3</p>
+</blockquote>
+<h2 id="Sample_Output">Sample Output</h2><blockquote>
+<p>T<br>T<br>T<br>F</p>
+</blockquote>
+<h2 id="Hint">Hint</h2><blockquote>
+<p>n&lt;=1000<br>1&lt;=a, b&lt;=n</p>
+</blockquote>
+<h2 id="Solution">Solution</h2><p>dfs..</p>
+<h2 id="Code">Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> rep(i, l, r) for (int i = l; i &lt;= r; i++)</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> REP(i, l, r) for (int i = l; i &gt;= r; i--)</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> MAXN <span class="number">1010</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">0</span>, f = <span class="number">1</span>; <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span> (ch&lt;<span class="string">'0'</span> || ch&gt;<span class="string">'9'</span>) &#123;<span class="keyword">if</span> (ch == <span class="string">'-'</span>) f = -<span class="number">1</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span> (ch&gt;=<span class="string">'0'</span> &amp;&amp; ch&lt;=<span class="string">'9'</span>) x = x*<span class="number">10</span> + ch - <span class="string">'0'</span>, ch = getchar();</span><br><span class="line">    <span class="keyword">return</span> x*f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, m, first[MAXN], next[MAXN*MAXN], N = -<span class="number">1</span>;</span><br><span class="line"><span class="keyword">struct</span> tlist &#123;<span class="keyword">int</span> x, y;&#125; a[MAXN*MAXN];</span><br><span class="line"><span class="keyword">bool</span> vis[MAXN], xx;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">    a[++N].x = x, a[N].y = y, next[N] = first[x], first[x] = N;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> S, <span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    vis[x] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = first[x]; ~i; i = next[i]) &#123;</span><br><span class="line">        <span class="keyword">if</span> (a[i].y == S) &#123;xx = <span class="number">1</span>; <span class="keyword">return</span>;&#125;</span><br><span class="line">        <span class="keyword">if</span> (xx) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">if</span> (!vis[a[i].y]) dfs(S, a[i].y);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(first, -<span class="number">1</span>, <span class="keyword">sizeof</span>(first));</span><br><span class="line">    <span class="built_in">memset</span>(next, -<span class="number">1</span>, <span class="keyword">sizeof</span>(next));</span><br><span class="line">    n = read(), m = read(); </span><br><span class="line">    rep(i, <span class="number">1</span>, m) &#123;</span><br><span class="line">        <span class="keyword">int</span> tx = read(), ty = read();</span><br><span class="line">        add(tx, ty);</span><br><span class="line">    &#125;</span><br><span class="line">    rep(i, <span class="number">1</span>, n) &#123;</span><br><span class="line">        xx = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">        dfs(i, i);</span><br><span class="line">        <span class="built_in">puts</span>(xx ? <span class="string">"T"</span> : <span class="string">"F"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><a href="http://codevs.cn/problem/1506/" target="_blank" style="color: rgb(91, 165, 230); font-family: &#39;comic sans ms&#39;; text-decoration: none;"><span style="color: rgb(91, 165, 230); font-family: &#39;comic sans ms&#39;;">Problem : http://codevs.cn/problem/1506/</span></a><br>]]>
+    
+    </summary>
+    
+      <category term="codeVS" scheme="http://zyq.sexy/tags/codeVS/"/>
+    
+      <category term="图遍历" scheme="http://zyq.sexy/categories/%E5%9B%BE%E9%81%8D%E5%8E%86/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[codeVS[1231]-最优布线问题]]></title>
