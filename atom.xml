@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://zyq.sexy/"/>
-  <updated>2015-10-29T04:25:27.000Z</updated>
+  <updated>2015-10-30T00:49:34.000Z</updated>
   <id>http://zyq.sexy/</id>
   
   <author>
@@ -13,6 +13,47 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[codeVS[1231]-最优布线问题]]></title>
+    <link href="http://zyq.sexy/2015/10/30/codevs1231/"/>
+    <id>http://zyq.sexy/2015/10/30/codevs1231/</id>
+    <published>2015-10-30T00:47:20.000Z</published>
+    <updated>2015-10-30T00:49:34.000Z</updated>
+    <content type="html"><![CDATA[<p><a href="http://codevs.cn/problem/1231/" target="_blank" style="color: rgb(91, 165, 230); font-family: &#39;comic sans ms&#39;; text-decoration: none;"><span style="color: rgb(91, 165, 230); font-family: &#39;comic sans ms&#39;;">Problem : http://codevs.cn/problem/1231/</span></a><br><a id="more"></a></p>
+<h2 id="Description">Description</h2><blockquote>
+<p>学校需要将n台计算机连接起来，不同的2台计算机之间的连接费用可能是不同的。为了节省费用，我们考虑采用间接数据传输结束，就是一台计算机可以间接地通过其他计算机实现和另外一台计算机连接。</p>
+<p>为了使得任意两台计算机之间都是连通的（不管是直接还是间接的），需要在若干台计算机之间用网线直接连接，现在想使得总的连接费用最省，让你编程计算这个最小的费用。</p>
+</blockquote>
+<h2 id="Input">Input</h2><blockquote>
+<p>输入第一行为两个整数n,m（2&lt;=n&lt;=100000，2&lt;=m&lt;=100000），表示计算机总数，和可以互相建立连接的连接个数。</p>
+<p>接下来m行，每行三个整数a,b,c 表示在机器a和机器b之间建立连接的话费是c。(题目保证一定存在可行的连通方案, 数据中可能存在权值不一样的重边，但是保证没有自环)</p>
+</blockquote>
+<h2 id="Output">Output</h2><blockquote>
+<p>输出只有一行一个整数，表示最省的总连接费用。</p>
+</blockquote>
+<h2 id="Sample_Input">Sample Input</h2><blockquote>
+<p>3 3<br>1 2 1<br>1 3 2<br>2 3 1</p>
+</blockquote>
+<h2 id="Sample_Output">Sample Output</h2><blockquote>
+<p>2</p>
+</blockquote>
+<h2 id="Hint">Hint</h2><blockquote>
+<p>最终答案需要用long long类型来保存</p>
+</blockquote>
+<h2 id="Solution">Solution</h2><p>kruskal</p>
+<h2 id="Code">Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> rep(i, l, r) for (int i = l; i &lt;= r; i++)</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> REP(i, l, r) for (int i = l; i &gt;= r; i--)</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> MAXN <span class="number">100010</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> buf[<span class="number">10</span>&lt;&lt;<span class="number">20</span>], *ch;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> k = <span class="number">1</span>, x = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (; !<span class="built_in">isdigit</span>(*ch) &amp;&amp; *ch!=<span class="string">'-'</span>; ch++); </span><br><span class="line">    <span class="keyword">if</span> (*ch != <span class="string">'-'</span>) x = *ch++ - <span class="string">'0'</span>; <span class="keyword">else</span> &#123;k =- <span class="number">1</span>; x = <span class="number">0</span>; ch++;&#125;</span><br><span class="line">    <span class="keyword">for</span> (; <span class="built_in">isdigit</span>(*ch); x = x*<span class="number">10</span> + k*(*ch++ - <span class="string">'0'</span>)); </span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, m, fa[MAXN];</span><br><span class="line"><span class="keyword">struct</span> tlist &#123;<span class="keyword">int</span> x, y, t;&#125; a[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (fa[x] != x) fa[x] = find(fa[x]);</span><br><span class="line">    <span class="keyword">return</span> fa[x];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(tlist a, tlist b)</span> </span>&#123;<span class="keyword">return</span> a.t &lt; b.t;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    fread(buf, <span class="keyword">sizeof</span>(buf), <span class="keyword">sizeof</span>(<span class="keyword">char</span>), <span class="built_in">stdin</span>); ch = buf;</span><br><span class="line">    n = read(), m = read();</span><br><span class="line">    rep(i, <span class="number">1</span>, n) fa[i] = i;</span><br><span class="line">    rep(i, <span class="number">1</span>, m) a[i].x = read(), a[i].y = read(), a[i].t = read(); </span><br><span class="line">    sort(a+<span class="number">1</span>, a+<span class="number">1</span>+m, cmp);</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>, cnt=<span class="number">0</span>; i&lt;=m &amp;&amp; cnt&lt;n; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (find(a[i].x) != find(a[i].y)) fa[find(a[i].x)] = find(a[i].y), cnt++, sum += a[i].t;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, sum);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><a href="http://codevs.cn/problem/1231/" target="_blank" style="color: rgb(91, 165, 230); font-family: &#39;comic sans ms&#39;; text-decoration: none;"><span style="color: rgb(91, 165, 230); font-family: &#39;comic sans ms&#39;;">Problem : http://codevs.cn/problem/1231/</span></a><br>]]>
+    
+    </summary>
+    
+      <category term="codeVS" scheme="http://zyq.sexy/tags/codeVS/"/>
+    
+      <category term="最小生成树" scheme="http://zyq.sexy/categories/%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[FZU[1483]-奖金]]></title>
