@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="poj," />
+  <meta name="keywords" content="codeVS," />
 
 
 
@@ -39,17 +39,16 @@
   <link rel="shorticon icon" type="image/x-icon" href="/images/favicon.jpG?v=0.4.5.1" />
 
 
-<meta name="description" content="Problem : http://poj.org/problem?id=1330">
+<meta name="description" content="Problem : http://codevs.cn/problem/2645/">
 <meta property="og:type" content="article">
-<meta property="og:title" content="POJ[1330]-Nearest Common Ancestors">
-<meta property="og:url" content="http://zyq.sexy/2015/10/22/poj-1330/index.html">
+<meta property="og:title" content="codeVS[2645]-Spore">
+<meta property="og:url" content="http://zyq.sexy/2015/10/30/codevs2645/index.html">
 <meta property="og:site_name" content="rnyz">
-<meta property="og:description" content="Problem : http://poj.org/problem?id=1330">
-<meta property="og:image" content="http://zyq.sexy/images/quote/poj1330_1.jpg">
-<meta property="og:updated_time" content="2015-10-22T15:11:52.000Z">
+<meta property="og:description" content="Problem : http://codevs.cn/problem/2645/">
+<meta property="og:updated_time" content="2015-10-30T08:03:09.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="POJ[1330]-Nearest Common Ancestors">
-<meta name="twitter:description" content="Problem : http://poj.org/problem?id=1330">
+<meta name="twitter:title" content="codeVS[2645]-Spore">
+<meta name="twitter:description" content="Problem : http://codevs.cn/problem/2645/">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -61,7 +60,7 @@
 
 
 
-  <title> POJ[1330]-Nearest Common Ancestors | rnyz </title>
+  <title> codeVS[2645]-Spore | rnyz </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -218,7 +217,7 @@
           
           
             
-              POJ[1330]-Nearest Common Ancestors
+              codeVS[2645]-Spore
             
           
         </h1>
@@ -227,8 +226,8 @@
       <div class="post-meta">
         <span class="post-time">
           发表于
-          <time itemprop="dateCreated" datetime="2015-10-22T23:04:57+08:00" content="2015-10-22">
-            2015-10-22
+          <time itemprop="dateCreated" datetime="2015-10-30T16:00:30+08:00" content="2015-10-30">
+            2015-10-30
           </time>
         </span>
 
@@ -237,8 +236,8 @@
             &nbsp; | &nbsp; 分类于
             
               <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/最近公共祖先/" itemprop="url" rel="index">
-                  <span itemprop="name">最近公共祖先</span>
+                <a href="/categories/最短路径/" itemprop="url" rel="index">
+                  <span itemprop="name">最短路径</span>
                 </a>
               </span>
 
@@ -253,8 +252,8 @@
           
             <span class="post-comments-count">
               &nbsp; | &nbsp;
-              <a href="/2015/10/22/poj-1330/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/22/poj-1330/" itemprop="commentsCount"></span>
+              <a href="/2015/10/30/codevs2645/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/10/30/codevs2645/" itemprop="commentsCount"></span>
               </a>
             </span>
           
@@ -269,29 +268,24 @@
       
 
       
-        <span itemprop="articleBody"><p><a href="http://poj.org/problem?id=1330" target="_blank" style="color: rgb(91, 165, 230); font-family: &#39;comic sans ms&#39;; text-decoration: none;"><span style="color: rgb(91, 165, 230); font-family: &#39;comic sans ms&#39;;">Problem : http://poj.org/problem?id=1330</span></a><br><a id="more"></a></p>
+        <span itemprop="articleBody"><p><a href="http://codevs.cn/problem/2645/" target="_blank" style="color: rgb(91, 165, 230); font-family: &#39;comic sans ms&#39;; text-decoration: none;"><span style="color: rgb(91, 165, 230); font-family: &#39;comic sans ms&#39;;">Problem : http://codevs.cn/problem/2645/</span></a><br><a id="more"></a></p>
 <h2 id="Description">Description</h2><blockquote>
-<p>A rooted tree is a well-known data structure in computer science and engineering. An example is shown below: </p>
-<p><div style="text-align:center;"><br>    <img src="/images/quote/poj1330_1.jpg" alt="poj1330_1"><br></div><br>In the figure, each node is labeled with an integer from {1, 2,…,16}. Node 8 is the root of the tree. Node x is an ancestor of node y if node x is in the path between the root and node y. For example, node 4 is an ancestor of node 16. Node 10 is also an ancestor of node 16. As a matter of fact, nodes 8, 4, 10, and 16 are the ancestors of node 16. Remember that a node is an ancestor of itself. Nodes 8, 4, 6, and 7 are the ancestors of node 7. A node x is called a common ancestor of two different nodes y and z if node x is an ancestor of node y and an ancestor of node z. Thus, nodes 8 and 4 are the common ancestors of nodes 16 and 7. A node x is called the nearest common ancestor of nodes y and z if x is a common ancestor of y and z and nearest to y and z among their common ancestors. Hence, the nearest common ancestor of nodes 16 and 7 is node 4. Node 4 is nearer to nodes 16 and 7 than node 8 is. </p>
-<p>For other examples, the nearest common ancestor of nodes 2 and 3 is node 10, the nearest common ancestor of nodes 6 and 13 is node 8, and the nearest common ancestor of nodes 4 and 12 is node 4. In the last example, if y is an ancestor of z, then the nearest common ancestor of y and z is y. </p>
-<p>Write a program that finds the nearest common ancestor of two distinct nodes in a tree. </p>
+<p>某陈和某Y 最近对一个游戏着迷.那是Electronic Arts 今年发布的优秀的模拟经营类游戏,Spore. 在Spore 中,玩家将经历从单细胞生物到星系的统治者的进化过程,创造并守护你自己的文明. 而某陈在经历了几天*几十分钟/天的游戏后,也终于已经近乎通关了. 目前,某陈统治着银河系中标号1 到N 的星系,而他的帝国中心,在星系1 的某颗美丽的行星之上.如同所有银河系中的文 明一样,贸易,发展,结盟,扩张,抵抗Grox[银河系中心的庞大的强悍的恐怖的邪恶帝国]的侵略. 某陈有足够的力量,他的疆域蔓延几百个光年.可是Grox 异常强大,他们的飞船出现在某陈了解的任何地方,并时常攻击任 何位置的某陈和盟友的单位[飞船,建筑,星球,甚至星系].战争在所难免. 某陈将从帝国中心去标号为N 的星系,他疆域的边缘,去寻找一个可能存在的通向银河系中心的黑洞.他要计划一条合适的 路线. 从星系g1 到达g2,某陈需要花费c1 的代价[主要是燃料,另外还有与沿途Grox 的势力作战的花费],c1 小于0 则是因为 这样的星系旅行,会给某陈带来收益[来源于物流差价,以及一些殖民地的税收..].相应地,c2 则是代表从星系g2 到达g1 的代价.据某陈了解,共有M 条这样的星系间路径. 为了战备,他需要选择一条总代价最小的路线.</p>
 </blockquote>
 <h2 id="Input">Input</h2><blockquote>
-<p>The input consists of T test cases. The number of test cases (T) is given in the first line of the input file. Each test case starts with a line containing an integer N , the number of nodes in a tree, 2&lt;=N&lt;=10,000. The nodes are labeled with integers 1, 2,…, N. Each of the next N -1 lines contains a pair of integers that represent an edge –the first integer is the parent node of the second integer. Note that a tree with N nodes has exactly N - 1 edges. The last line of each test case contains two distinct integers whose nearest common ancestor is to be computed.</p>
-</blockquote>
-<h2 id="Output">Output</h2><blockquote>
-<p>Print exactly one line for each test case. The line should contain the integer that is the nearest common ancestor.</p>
+<p>输入文件包括多组数据.<br>对于每一组数据,第一行有2 个整数n,m,如题目描述中的含义,1&lt;=n&lt;=1000,0&lt;=m&lt;=10000.<br>接下来的m 行,每行会有四个整数g1,g2,c1,c2,如题目描述中的含义.0&lt;=g1,g2&lt;=n.<br>输入数据保证所有整数都在[- 10000..10000]的范围内.<br>n=0,m=0 标识着输入数据的结束.每个输入文件包含不超过10 组数据.</p>
 </blockquote>
 <h2 id="Sample_Input">Sample Input</h2><blockquote>
-<p>2<br>16<br>1 14<br>8 5<br>10 16<br>5 9<br>4 6<br>8 4<br>4 10<br>1 13<br>6 15<br>10 11<br>6 7<br>10 2<br>16 3<br>8 1<br>16 12<br>16 7<br>5<br>2 3<br>3 4<br>3 1<br>1 5<br>3 5</p>
+<p>3 2<br>1 2 -1 -1<br>2 3 -1 -1<br>0 0</p>
 </blockquote>
 <h2 id="Sample_Output">Sample Output</h2><blockquote>
-<p>4<br>3</p>
+<p>2</p>
 </blockquote>
-<h2 id="Hint">Hint</h2><p>None</p>
-<h2 id="Trans">Trans</h2><p>T组数据, 每组数据一颗树, 求LCA.</p>
-<h2 id="Solution">Solution</h2><p>突然发现不会写倍增了- -</p>
-<h2 id="Code">Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> rep(i, l, r) for (int i = l; i &lt;= r; i++)</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> REP(i, l, r) for (int i = l; i &gt;= r; i--)</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> MAXN <span class="number">10010</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">0</span>, f = <span class="number">1</span>; <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span> (ch&lt;<span class="string">'0'</span> || ch&gt;<span class="string">'9'</span>) &#123;<span class="keyword">if</span> (ch == <span class="string">'-'</span>) f = -<span class="number">1</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span> (ch&gt;=<span class="string">'0'</span> &amp;&amp; ch&lt;=<span class="string">'9'</span>) x = x*<span class="number">10</span> + ch - <span class="string">'0'</span>, ch = getchar();</span><br><span class="line">    <span class="keyword">return</span> x*f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, first[MAXN], next[MAXN], N = -<span class="number">1</span>, root, qx, qy, dep[MAXN], f[MAXN][<span class="number">24</span>];</span><br><span class="line"><span class="keyword">bool</span> getroot[MAXN];</span><br><span class="line"><span class="keyword">struct</span> tlist &#123;<span class="keyword">int</span> x, y;&#125; a[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">    a[++N].x = x, a[N].y = y, next[N] = first[x], first[x] = N;</span><br><span class="line">    f[y][<span class="number">0</span>] = x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> d)</span> </span>&#123;</span><br><span class="line">    dep[x] = d;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = first[x]; ~i; i = next[i])</span><br><span class="line">        dfs(a[i].y, d+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> T_T = read();</span><br><span class="line">    <span class="keyword">while</span> (T_T--) &#123;</span><br><span class="line">        <span class="built_in">memset</span>(first, -<span class="number">1</span>, <span class="keyword">sizeof</span>(first));</span><br><span class="line">        <span class="built_in">memset</span>(next, -<span class="number">1</span>, <span class="keyword">sizeof</span>(next));</span><br><span class="line">        <span class="built_in">memset</span>(f, <span class="number">0</span>, <span class="keyword">sizeof</span>(f));</span><br><span class="line">        <span class="built_in">memset</span>(getroot, <span class="number">0</span>, <span class="keyword">sizeof</span>(getroot));</span><br><span class="line">        N = -<span class="number">1</span>;</span><br><span class="line">        n = read();</span><br><span class="line">        rep(i, <span class="number">1</span>, n-<span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> tx = read(), ty = read();</span><br><span class="line">            <span class="keyword">if</span> (!f[tx][<span class="number">0</span>]) root = tx;</span><br><span class="line">            add(tx, ty);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> tx = read(), ty = read();</span><br><span class="line">        dfs(root, <span class="number">0</span>);</span><br><span class="line">        rep(j, <span class="number">1</span>, <span class="number">19</span>)</span><br><span class="line">            rep(i, <span class="number">1</span>, n)</span><br><span class="line">                f[i][j] = f[f[i][j-<span class="number">1</span>]][j-<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">if</span> (dep[tx] &lt; dep[ty]) swap(tx, ty);</span><br><span class="line">        <span class="keyword">int</span> delta = dep[tx] - dep[ty];</span><br><span class="line">        rep(i, <span class="number">0</span>, <span class="number">19</span>)</span><br><span class="line">            <span class="keyword">if</span> ((<span class="number">1</span>&lt;&lt;i) &amp; delta) tx = f[tx][i];</span><br><span class="line">        <span class="keyword">if</span> (tx == ty) <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, tx);</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            REP(i, <span class="number">15</span>, <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (f[tx][i] != f[ty][i]) tx = f[tx][i], ty = f[ty][i];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, f[tx][<span class="number">0</span>]);</span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Hint">Hint</h2><blockquote>
+<p>输入数据保证所有整数都在[- 10000..10000]的范围内.</p>
+</blockquote>
+<h2 id="Solution">Solution</h2><p>spfa..<br>但是此题坑爹..有负权环..</p>
+<h2 id="Code">Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> rep(i, l, r) for (int i = l; i &lt;= r; i++)</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> REP(i, l, r) for (int i = l; i &gt;= r; i--)</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> MAXN <span class="number">1010</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> MAXM <span class="number">20010</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">0</span>, f = <span class="number">1</span>; <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span> (ch&lt;<span class="string">'0'</span> || ch&gt;<span class="string">'9'</span>) &#123;<span class="keyword">if</span> (ch == <span class="string">'-'</span>) f = -<span class="number">1</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span> (ch&gt;=<span class="string">'0'</span> &amp;&amp; ch&lt;=<span class="string">'9'</span>) x = x*<span class="number">10</span> + ch - <span class="string">'0'</span>, ch = getchar();</span><br><span class="line">    <span class="keyword">return</span> x*f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, m, N = -<span class="number">1</span>, first[MAXN], next[MAXM], cnt[MAXN];</span><br><span class="line"><span class="keyword">struct</span> tlist &#123;<span class="keyword">int</span> x, y, t;&#125; a[MAXM];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> t)</span> </span>&#123;</span><br><span class="line">    a[++N].x = x, a[N].y = y, a[N].t = t, next[N] = first[x], first[x] = N;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> dis[MAXN];</span><br><span class="line"><span class="keyword">bool</span> vis[MAXN];</span><br><span class="line"><span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; q;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">spfa</span><span class="params">(<span class="keyword">int</span> S, <span class="keyword">int</span> T)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (!q.empty()) q.pop();</span><br><span class="line">    <span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">    <span class="built_in">memset</span>(dis, <span class="number">0x1f</span>, <span class="keyword">sizeof</span>(dis));</span><br><span class="line">    <span class="built_in">memset</span>(cnt, <span class="number">0</span>, <span class="keyword">sizeof</span>(cnt));</span><br><span class="line">    dis[S] = <span class="number">0</span>, vis[S] = <span class="number">1</span>, cnt[S] = <span class="number">1</span>;</span><br><span class="line">    q.push(S);</span><br><span class="line">    <span class="keyword">while</span> (!q.empty()) &#123;</span><br><span class="line">        <span class="keyword">int</span> x = q.front(); q.pop();</span><br><span class="line">        vis[x] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = first[x]; ~i; i = next[i])</span><br><span class="line">            <span class="keyword">if</span> (dis[x] + a[i].t &lt; dis[a[i].y]) &#123;</span><br><span class="line">                dis[a[i].y] = dis[x] + a[i].t;</span><br><span class="line">                <span class="keyword">if</span> (!vis[a[i].y]) &#123;</span><br><span class="line">                    vis[a[i].y] = <span class="number">1</span>;</span><br><span class="line">                    q.push(a[i].y);</span><br><span class="line">                    cnt[a[i].y]++;</span><br><span class="line">                    <span class="keyword">if</span> (cnt[a[i].y] &gt; n) <span class="keyword">return</span> dis[MAXN-<span class="number">1</span>];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dis[T];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (<span class="number">1</span>) &#123;</span><br><span class="line">        N = -<span class="number">1</span>;</span><br><span class="line">        <span class="built_in">memset</span>(first, -<span class="number">1</span>, <span class="keyword">sizeof</span>(first));</span><br><span class="line">        <span class="built_in">memset</span>(next, -<span class="number">1</span>, <span class="keyword">sizeof</span>(next));</span><br><span class="line">        n = read(), m = read();</span><br><span class="line">        <span class="keyword">if</span> (!n &amp;&amp; !m) <span class="keyword">break</span>;</span><br><span class="line">        rep(i, <span class="number">1</span>, m) &#123;</span><br><span class="line">            <span class="keyword">int</span> tx = read(), ty = read(), c1 = read(), c2 = read();</span><br><span class="line">            add(tx, ty, c1), add(ty, tx, c2);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> ans = spfa(<span class="number">1</span>, n);</span><br><span class="line">        <span class="keyword">if</span> (ans == dis[MAXN-<span class="number">1</span>]) <span class="built_in">puts</span>(<span class="string">"No such path"</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, spfa(<span class="number">1</span>, n));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </span>
       
     </div>
@@ -300,7 +294,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/poj/" rel="tag">#poj</a>
+            <a href="/tags/codeVS/" rel="tag">#codeVS</a>
           
         </div>
       
@@ -309,13 +303,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/10/26/codeforces-587c/" rel="prev">Codeforces[587C]-Duff in the Army</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/10/21/codeforces-587b/" rel="next">Codeforces[587B]-Duff in Beach</a>
+              <a href="/2015/10/30/codevs1506/" rel="next">codeVS[1506]-传话</a>
             
           </div>
         </div>
@@ -363,8 +355,8 @@
         
           <div class="comments" id="comments">
             
-              <div class="ds-thread" data-thread-key="2015/10/22/poj-1330/"
-                   data-title="POJ[1330]-Nearest Common Ancestors" data-url="http://zyq.sexy/2015/10/22/poj-1330/">
+              <div class="ds-thread" data-thread-key="2015/10/30/codevs2645/"
+                   data-title="codeVS[2645]-Spore" data-url="http://zyq.sexy/2015/10/30/codevs2645/">
               </div>
             
           </div>
@@ -490,7 +482,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Input"><span class="nav-number">2.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output"><span class="nav-number">3.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample_Input"><span class="nav-number">4.</span> <span class="nav-text">Sample Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample_Output"><span class="nav-number">5.</span> <span class="nav-text">Sample Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hint"><span class="nav-number">6.</span> <span class="nav-text">Hint</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Trans"><span class="nav-number">7.</span> <span class="nav-text">Trans</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">8.</span> <span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code"><span class="nav-number">9.</span> <span class="nav-text">Code</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Description"><span class="nav-number">1.</span> <span class="nav-text">Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Input"><span class="nav-number">2.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample_Input"><span class="nav-number">3.</span> <span class="nav-text">Sample Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample_Output"><span class="nav-number">4.</span> <span class="nav-text">Sample Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hint"><span class="nav-number">5.</span> <span class="nav-text">Hint</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">6.</span> <span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code"><span class="nav-number">7.</span> <span class="nav-text">Code</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
