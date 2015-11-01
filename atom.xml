@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://zyq.sexy/"/>
-  <updated>2015-10-30T08:03:09.000Z</updated>
+  <updated>2015-11-01T03:39:21.000Z</updated>
   <id>http://zyq.sexy/</id>
   
   <author>
@@ -13,6 +13,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Vijos[1250]-最勇敢的机器人]]></title>
+    <link href="http://zyq.sexy/2015/11/01/vijos1250/"/>
+    <id>http://zyq.sexy/2015/11/01/vijos1250/</id>
+    <published>2015-11-01T03:35:24.000Z</published>
+    <updated>2015-11-01T03:39:21.000Z</updated>
+    <content type="html"><![CDATA[<p><a href="https://vijos.org/p/1250" target="_blank" style="color: rgb(91, 165, 230); font-family: &#39;comic sans ms&#39;; text-decoration: none;"><span style="color: rgb(91, 165, 230); font-family: &#39;comic sans ms&#39;;">Problem : https://vijos.org/p/1250</span></a><br><a id="more"></a></p>
+<h2 id="Background">Background</h2><blockquote>
+<p>Wind设计了很多机器人。但是它们都认为自己是最强的，于是，一场比赛开始了~</p>
+</blockquote>
+<h2 id="Description">Description</h2><blockquote>
+<p>机器人们都想知道谁是最勇敢的，于是它们比赛搬运一些物品。</p>
+<p>它们到了一个仓库，里面有n个物品，每个物品都有一个价值Pi和重量Wi，但是有些物品放在一起会爆炸，并且爆炸具有传递性。（a和b会爆炸、b和c会爆炸则a和c会爆炸）</p>
+<p>机器人们可不想因此损失自己好不容易从Wind那里敲诈来的装备，于是它们想知道在能力范围内，它们最多可以拿多少价值的物品。</p>
+<p>你能帮助它们吗？</p>
+</blockquote>
+<h2 id="Input">Input</h2><blockquote>
+<p>每组测试数据</p>
+<p>第1行为n,Wmax,k(0&lt;=n,Wmax,k&lt;=1000)<br>接下来n行，为每个物品的Pi,Wi(0&lt;=Pi&lt;=1000,1&lt;=Wi&lt;=10,均为整数)<br>再接下来k行，每行2个数字a,b表示a和b会发生爆炸</p>
+</blockquote>
+<h2 id="Output">Output</h2><blockquote>
+<p>对每组数据输出1行<br>为最大可能价值</p>
+</blockquote>
+<h2 id="Sample_Input">Sample Input</h2><blockquote>
+<p>3 10 1<br>100 1<br>200 5<br>10 5<br>1 2</p>
+</blockquote>
+<h2 id="Sample_Output">Sample Output</h2><blockquote>
+<p>210</p>
+</blockquote>
+<h2 id="Hint">Hint</h2><blockquote>
+<p>每个测试点1s</p>
+</blockquote>
+<h2 id="Solution">Solution</h2><p>并查集,然后分组dp<br>注意..虽说输入格式中表明多组数据..其实==只有一组==</p>
+<h2 id="Code">Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> rep(i, l, r) for (int i = l; i &lt;= r; i++)</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> REP(i, l, r) for (int i = l; i &gt;= r; i--)</span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">define</span> MAXN <span class="number">1010</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">0</span>, f = <span class="number">1</span>; <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span> (ch&lt;<span class="string">'0'</span> || ch&gt;<span class="string">'9'</span>) &#123;<span class="keyword">if</span> (ch == <span class="string">'-'</span>) f = -<span class="number">1</span>; ch = getchar();&#125;</span><br><span class="line">    <span class="keyword">while</span> (ch&gt;=<span class="string">'0'</span> &amp;&amp; ch&lt;=<span class="string">'9'</span>) x = x*<span class="number">10</span> + ch - <span class="string">'0'</span>, ch = getchar();</span><br><span class="line">    <span class="keyword">return</span> x*f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, maxw, fa[MAXN], c[MAXN], w[MAXN], f[MAXN][MAXN], m = <span class="number">0</span>;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; a[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (fa[x] != x) fa[x] = find(fa[x]);</span><br><span class="line">    <span class="keyword">return</span> fa[x];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    n = read(), maxw = read(); <span class="keyword">int</span> T_T = read(); </span><br><span class="line">    rep(i, <span class="number">1</span>, n) c[i] = read(), w[i] = read();</span><br><span class="line">    rep(i, <span class="number">1</span>, n) fa[i] = i;</span><br><span class="line">    <span class="keyword">while</span> (T_T--) &#123;</span><br><span class="line">        <span class="keyword">int</span> tx = read(), ty = read();</span><br><span class="line">        fa[find(tx)] = find(ty); </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> vis[MAXN]; <span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">    rep(i, <span class="number">1</span>, n) </span><br><span class="line">        <span class="keyword">if</span> (!vis[find(i)]) vis[find(i)] = ++m, a[m].push_back(i);</span><br><span class="line">        <span class="keyword">else</span> a[vis[(find(i))]].push_back(i);</span><br><span class="line">    rep(i, <span class="number">1</span>, m) rep(j, <span class="number">0</span>, maxw) &#123;</span><br><span class="line">        f[i][j] = f[i-<span class="number">1</span>][j];</span><br><span class="line">        rep(k, <span class="number">0</span>, <span class="keyword">int</span>(a[i].size())-<span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (j &lt; w[a[i][k]]) <span class="keyword">continue</span>;</span><br><span class="line">            f[i][j] = max(f[i][j], f[i-<span class="number">1</span>][j-w[a[i][k]]] + c[a[i][k]]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">    rep(i, <span class="number">0</span>, maxw) ans = max(ans, f[m][i]);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, ans);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><a href="https://vijos.org/p/1250" target="_blank" style="color: rgb(91, 165, 230); font-family: &#39;comic sans ms&#39;; text-decoration: none;"><span style="color: rgb(91, 165, 230); font-family: &#39;comic sans ms&#39;;">Problem : https://vijos.org/p/1250</span></a><br>]]>
+    
+    </summary>
+    
+      <category term="Vijos" scheme="http://zyq.sexy/tags/Vijos/"/>
+    
+      <category term="并查集" scheme="http://zyq.sexy/categories/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
+    
+      <category term="动态规划" scheme="http://zyq.sexy/categories/%E5%B9%B6%E6%9F%A5%E9%9B%86/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[codeVS[2645]-Spore]]></title>
